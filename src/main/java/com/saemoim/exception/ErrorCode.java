@@ -38,10 +38,6 @@ public enum ErrorCode {
 	// 후기
 	DUPLICATED_REVIEW("이미 후기를 등록하였습니다."),
 
-	// 블랙리스트
-	DUPLICATED_BLACKLIST("이미 블랙리스트에 등록되어 있습니다."),
-	NOT_FOUND_BLACKLIST("해당 블랙리스트가 존재하지 않습니다."),
-
 	// 게시글
 	NOT_FOUND_POST("해당 게시글이 존재하지 않습니다."),
 	NOT_MATCH_USER("수정/삭제는 작성자만 가능합니다."),

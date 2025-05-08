@@ -20,8 +20,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import com.saemoim.domain.enums.UserRoleEnum;
 import com.saemoim.jwt.JwtAuthFilter;
 import com.saemoim.jwt.JwtUtil;
-import com.saemoim.oauth.CustomOAuth2UserService;
-import com.saemoim.oauth.OAuth2AuthenticationSuccessHandler;
 import com.saemoim.security.CustomAccessDeniedHandler;
 import com.saemoim.security.CustomAuthenticationEntryPoint;
 import com.saemoim.security.CustomAuthenticationFailureHandler;
@@ -36,8 +34,6 @@ public class WebSecurityConfig implements WebMvcConfigurer {
 	private final JwtUtil jwtUtil;
 	private final CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
 	private final CustomAccessDeniedHandler customAccessDeniedHandler;
-	private final CustomOAuth2UserService oAuth2UserService;
-	private final OAuth2AuthenticationSuccessHandler oAuth2AuthenticationSuccessHandler;
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
@@ -46,9 +42,14 @@ public class WebSecurityConfig implements WebMvcConfigurer {
 
 	@Bean
 	public WebSecurityCustomizer webSecurityCustomizer() {
-		// static resources ( css, js, images 등 ) 자원에 대한 접근 허용
-		return (web -> web.ignoring()
-			.requestMatchers(PathRequest.toStaticResources().atCommonLocations()));
+		return web -> web.ignoring().requestMatchers(
+				PathRequest.toStaticResources().atCommonLocations()
+		).requestMatchers(
+				"/welcome/**",
+				"/images/**",
+				"/favicon.ico",
+				"/config/**"
+		);
 	}
 
 	@Bean
@@ -65,6 +66,7 @@ public class WebSecurityConfig implements WebMvcConfigurer {
 
 		http.authorizeHttpRequests()
 			.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+			.requestMatchers("/").permitAll()
 			.requestMatchers("/docs/*").permitAll() // restDocs
 			.requestMatchers("/sign-up/**").permitAll()
 			.requestMatchers("/sign-in").permitAll()
@@ -79,14 +81,12 @@ public class WebSecurityConfig implements WebMvcConfigurer {
 			.requestMatchers("/admin").hasAnyRole(UserRoleEnum.ROOT.toString())
 			.requestMatchers("/admins/**").hasAnyRole(UserRoleEnum.ROOT.toString())
 			.requestMatchers("/admin/**").hasAnyRole(UserRoleEnum.ADMIN.toString(), UserRoleEnum.ROOT.toString())
+			.requestMatchers("/", "/index", "/welcome/**", "/images/**", "/css/**", "/js/**", "/config/**", "/favicon.ico").permitAll()
 			.anyRequest().authenticated()
 			.and().addFilterBefore(new JwtAuthFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class);
 
 		http.cors();
 		http.formLogin().disable();
-		http.oauth2Login()
-			.successHandler(oAuth2AuthenticationSuccessHandler)
-			.userInfoEndpoint().userService(oAuth2UserService);
 
 		http.exceptionHandling().authenticationEntryPoint(customAuthenticationEntryPoint);
 		http.exceptionHandling().accessDeniedHandler(customAccessDeniedHandler);

@@ -25,6 +25,7 @@ bin/
 *.iml
 *.ipr
 **/application.properties
+**/application.yml
 **/aws.yml
 out/
 !**/src/main/**/out/

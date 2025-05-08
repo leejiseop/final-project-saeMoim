@@ -36,13 +36,13 @@ dependencies {
     runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2'
     runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
 
-    implementation 'mysql:mysql-connector-java'
+//    implementation 'mysql:mysql-connector-java'
+    implementation 'com.mysql:mysql-connector-j:8.2.0'
     implementation 'com.google.code.gson:gson:2.9.0'
 
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
     implementation 'org.springframework.boot:spring-boot-starter-mail'
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client:2.6.2'
 
     implementation group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.12.410'
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws', version: '2.2.1.RELEASE'

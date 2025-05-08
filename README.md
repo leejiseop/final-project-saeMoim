@@ -34,15 +34,17 @@ ___
 ___
 ### 목차
 <!-- TOC -->
-* [새모임 프로젝트🕊️](#-)
-    * [프로젝트 설명 </br>](#--br)
-    * [기술 스택</br>](#--br)
-    * [프로젝트 개발 환경](#--)
-    * [와이어 프레임](#-)
-    * [서비스 아키텍처](#-)
-    * [Class UML](#class-uml)
-    * [ERD](#erd)
-    * [팀소개](#)
+- [새모임 프로젝트🕊️](#새모임-프로젝트️)
+    - [프로젝트 설명 ](#프로젝트-설명-)
+    - [기술 스택](#기술-스택)
+    - [목차](#목차)
+    - [프로젝트 개발 환경](#프로젝트-개발-환경)
+    - [와이어 프레임](#와이어-프레임)
+    - [서비스 아키텍처](#서비스-아키텍처)
+    - [Class UML](#class-uml)
+    - [ERD](#erd)
+    - [API 문서](#api-문서)
+    - [팀소개](#팀소개)
 <!-- TOC -->
 ___
 ### 프로젝트 개발 환경
@@ -78,7 +80,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
     implementation 'org.springframework.boot:spring-boot-starter-mail'
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client:2.6.2'
 
     implementation group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.12.410'
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws', version: '2.2.1.RELEASE'

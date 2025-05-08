@@ -7,11 +7,10 @@ import java.util.Map;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import com.saemoim.domain.enums.UserRoleEnum;
 
-public class UserDetailsImpl implements UserDetails, OAuth2User {
+public class UserDetailsImpl implements UserDetails {
 
 	private final String username;    // 인증된 유저 객체
 	private final Long id;
@@ -34,10 +33,10 @@ public class UserDetailsImpl implements UserDetails, OAuth2User {
 		this.attributes = attributes;
 	}
 
-	@Override
-	public Map<String, Object> getAttributes() {
-		return attributes;
-	}
+//	@Override
+//	public Map<String, Object> getAttributes() { // oauth?
+//		return attributes;
+//	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -81,9 +80,9 @@ public class UserDetailsImpl implements UserDetails, OAuth2User {
 	public boolean isEnabled() {
 		return true;
 	}
-
-	@Override
-	public String getName() {
-		return null;
-	}
+//
+//	@Override
+//	public String getName() { // oauth?
+//		return null;
+//	}
 }
