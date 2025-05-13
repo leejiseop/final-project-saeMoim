@@ -8,17 +8,15 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <script src="https://kit.fontawesome.com/13a08ca775.js" crossorigin="anonymous"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script type="text/javascript"
-            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=db46af3ae73024f086a9c30202fe238d&libraries=services"></script>
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
             integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="../static/main/main.css">
-    <link rel="shortcut icon" href="../static/images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="../static/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../main/main.css">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -79,7 +77,7 @@
                 </div>
                 <div class="moim_detail_buttons">
                     <button id="moim_edit_button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modifyMoimModal"
-                            onclick="relayoutMap(); fillEditMoim();">모임 수정
+                            onclick="fillEditMoim();">모임 수정
                     </button>
                     <button type="button" class="btn" id="moimStatus"
                             onclick="changeStatus(document.getElementById('moimDetailId').value)">
@@ -243,7 +241,7 @@
         <div class="sidebar-header">
             <div class="app-icon" onclick="goToHome()" style="margin-bottom: 10px; cursor: pointer;">
                 <h1 style="display: inline;">SAEMOIM</h1>
-                <img src="../static/images/bird.png" alt="" style="display: inline;">
+                <img src="../images/bird.png" alt="" style="display: inline;">
             </div>
         </div>
         <ul class="sidebar-list">
@@ -275,11 +273,11 @@
         <div class="account-info">
             <div class="account-info-picture">
                 <img    id="small_profile_image"
-                        src="../static/images/bird.png"
+                        src="../images/bird.png"
                         onclick="goToHome()" alt="Account">
             </div>
             <div class="account-info-name" id="username"></div>
-            <img class="account-info-more" id="logout_image" src="../static/images/logout.png" alt="" onclick="logout()" style="padding: 7px;">
+            <img class="account-info-more" id="logout_image" src="../images/logout.png" alt="" onclick="logout()" style="padding: 7px;">
         </div>
     </div>
 
@@ -288,7 +286,7 @@
         <div class="app-content-header">
             <h1 class="app-content-headerText">모임 찾기</h1>
             <button class="app-content-headerButton btn-open-popup" data-bs-toggle="modal"
-                    data-bs-target="#newMoimModal" onclick="relayoutMap()">새 모임 추가하기
+                    data-bs-target="#newMoimModal">새 모임 추가하기
             </button>
         </div>
         <div class="app-content-actions">
@@ -385,7 +383,7 @@
         <div class="app-content-section" id="myProfile">
             <div id="myProfile_2">
                 <div style="text-align: center; width: 300px; margin-top: 10px;">
-                    <img id="profile-image" src="../static/images/bird.png" width="300px" height="300px" style="border-radius: 20%;"/>
+                    <img id="profile-image" src="../images/bird.png" width="300px" height="300px" style="border-radius: 20%;"/>
                     <h2 id="profileName" style="margin: 20px 0;"></h2>
                 </div>
                 <div class="content_title" style="margin: 25px 0;">
@@ -446,6 +444,6 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="../static/config/config.js"></script>
-<script src="../static/main/main.js"></script>
+<script src="../config/config.js"></script>
+<script src="../main/main.js"></script>
 </html>

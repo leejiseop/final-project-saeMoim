@@ -27,8 +27,6 @@ ___
   <img src="https://img.shields.io/badge/Amazon S3-232f3e?style=for-the-badge&logo=Amazon S3&logoColor=ec7211">
   <img src="https://img.shields.io/badge/Amazon RDS-232f3e?style=for-the-badge&logo=Amazon RDS&logoColor=ec7211"> <br>
   <img src="https://img.shields.io/badge/Github Actions-3373EF?style=for-the-badge&logo=Github Actions&logoColor=white"> <br>
-<img src="https://img.shields.io/badge/KakaoAPI-FFCD00?style=for-the-badge&logo=&logoColor=black"> 
-
 </div>
 
 ___

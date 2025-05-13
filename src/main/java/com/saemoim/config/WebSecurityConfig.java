@@ -82,8 +82,9 @@ public class WebSecurityConfig implements WebMvcConfigurer {
 			.requestMatchers("/admins/**").hasAnyRole(UserRoleEnum.ROOT.toString())
 			.requestMatchers("/admin/**").hasAnyRole(UserRoleEnum.ADMIN.toString(), UserRoleEnum.ROOT.toString())
 			.requestMatchers("/", "/index", "/welcome/**", "/images/**", "/css/**", "/js/**", "/config/**", "/favicon.ico").permitAll()
-			.anyRequest().authenticated()
-			.and().addFilterBefore(new JwtAuthFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class);
+			//.anyRequest().authenticated()
+			.anyRequest().permitAll();
+			//.and().addFilterBefore(new JwtAuthFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class);
 
 		http.cors();
 		http.formLogin().disable();

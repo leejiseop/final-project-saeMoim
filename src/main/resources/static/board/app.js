@@ -364,7 +364,7 @@ function openBody(event) {
     if (postArray[index]["imagePath"] != null) {
         document.getElementById('post-image').src = postArray[index]["imagePath"];
     } else {
-        document.getElementById('post-image').src = "../static/images/main-english.jpg";
+        document.getElementById('post-image').src = "../images/main-english.jpg";
     }
 
     let currentPostId = postArray[index]["id"]
