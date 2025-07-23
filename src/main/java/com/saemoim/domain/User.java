@@ -14,10 +14,10 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Getter
 @Entity(name = "users")
-@NoArgsConstructor
+@Getter
 @Builder
+@NoArgsConstructor
 @AllArgsConstructor
 public class User extends TimeStamped {
 	@Id
